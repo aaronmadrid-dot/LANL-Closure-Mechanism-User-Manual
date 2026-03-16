@@ -19,8 +19,11 @@
 
 %Custom Environments for Safety
 \usepackage{tcolorbox}
-\newtcolorbox{warning}{colback=red!5!white,colframe=red!75!black,title=WARNING}
-\newtcolorbox{caution}{colback=yellow!10!white,colframe=orange!85!black,title=CAUTION}
+\newtcolorbox{warning}{colback=orange!5!white,colframe=orange!75!black,title=WARNING}
+\newtcolorbox{caution}{colback=yellow!5!white,colframe=yellow!85!black,title=CAUTION}
+\newtcolorbox{danger}{colback=red!5!white,colframe=red!75!black,title=DANGER}
+\newtcolorbox{notice}{colback=blue!5!white,colframe=blue!85!black,title=NOTICE}
+
 
 %Header/Footer Setup
 \pagestyle{fancy}
@@ -81,9 +84,10 @@ Operation outside specified temperature, environmental, or mechanical limits may
         \begin{tabular}{@{}ll@{}}
         \toprule
         Parameter & Specification \\ \midrule
+        Final flow & $< 5$ CFM \\
         Actuation Time & $< 5$ min \\
-        Actuation Temperature & $180^\circ$C \\
-        Max Temperature & $1700^\circ$C \\
+        Actuation Temperature & $180^\circ$F \\
+        Max Temperature & $1700^\circ$F \\
         Sensor Type & Mechanical Actuation \\ \bottomrule
         \end{tabular}
         \caption{General Specifications}
@@ -102,8 +106,12 @@ There are four primary subsystems; the Arm Cuff, the Heat Fuse, the Actuation Me
 Figure \ref{fig:subsections}
 
 \subsection{Arm Cuff}
-The primary purpose of the arm cuff is to reduce the airflow into the glovebox from 90CFM to 1CFM. It is composed of three components, the outer wrap, the inner strip, and 8 clips which hold the cable.
-
+The primary purpose of the arm cuff is to reduce the airflow into the glovebox from 90 CFM to 1 CFM. It is composed of three components, the outer wrap, the inner strip, and 8 clips which hold the cable.
+\begin{itemize}
+    \item Outer Wrap: Refrasil cloth intended to withstand 1700$^\circ$F temperatures and restrict airflow into Glovebox. 
+    \item Inner Strip: Locates cloth clips. 
+    \item Cloth clips: Guides cable wrap and distrubtes pressure around user arm during activation. 
+\end{itemize}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\linewidth]{Images/Arm Cuff/Pad (Open).png}
@@ -120,7 +128,7 @@ The primary purpose of the arm cuff is to reduce the airflow into the glovebox f
 \end{figure}
 
 \subsection{Heat Fuse}
-The heat fuse is what senses and initiates the mechanical motion of the closure mechanism. When the heat fuse reaches $180^oF$ the small acrylic fuse will start to experience creep and allow the spring cable mechanism to actuate the lever.
+The heat fuse is what senses and initiates the mechanical motion of the closure mechanism. When the heat fuse reaches $180^\circ$F the small acrylic fuse will start to experience creep and allow the spring cable mechanism to actuate the lever.
 
 \begin{figure}[H]
     \centering
@@ -136,6 +144,10 @@ The heat fuse is what senses and initiates the mechanical motion of the closure 
 \end{figure}
 
 \subsection{Actuation Mechanism}
+The actuation mechanism is the mechanical component of the closure device, the main purpose is to draw in cable and in turn sinching the arm cuff. The activation mechanism is composed of two drums manipulated by rotor springs. The springs are located within the structural shelf and constrained by the rotor shaft, locator pins, and the steel cover plate (see \label{sec:Installation} ). The left drum serves as the primary actuator, upon release the left drum will draw in cable sinching the bag. The secondary (right) drum is on a mechanical delay using a 2:1 gear ratio, this allows the second spring to activate when the first one has drawn in the majority of the cable. The secondary spring ensures mechanism remains closed. 
+
+The actuation mechanism can be manually operated with the lever on the left hand side. 
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\linewidth]{Images/Actuation Mechanism/Mechanism Top.png}
@@ -145,6 +157,8 @@ The heat fuse is what senses and initiates the mechanical motion of the closure 
 \end{figure}
 
 \subsection{Secondary Closure}
+
+The secondary closure device serves as a stationary air restriction that can be latched by the user. This closure flap must be manually manipulated by the user and should be used only when the user can do so safely. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\linewidth]{Images/Secondary Closure/Closure Device (Covered, Secondary Closed).png}
@@ -163,6 +177,22 @@ The heat fuse is what senses and initiates the mechanical motion of the closure 
 \chapter{Safety Information}
 
 \section{General Safety Warnings}
+    \begin{danger}
+        Indicates a hazard that will result in death or serious injury.
+    \end{danger}
+    \begin{warning}
+        Indicates a hazard that could result in death or serious injury.
+    \end{warning}
+    \begin{caution}
+        Indicates a hazard that could result in a moderate or minor injury.
+    \end{caution}
+    \begin{notice}
+        Indicates practical advice, or a situation that will result in damaged
+        equipment.
+    \end{notice}
+
+\hline
+   
     \begin{warning}
         This device is designed to actuate automatically when exposed to elevated temperatures associated with a fire. Users must not place hands, tools, or foreign objects within the path of the actuation mechanism while the device is armed. Sudden mechanical movement may occur when the thermal fuse activates.
     \end{warning}
@@ -205,9 +235,35 @@ The heat fuse is what senses and initiates the mechanical motion of the closure 
 \chapter{Installation}
 
 \section{Inspection of Device}
+
+Prior to installation of closure mechanism complete the following inspection checklist. 
+
+\begin{enumerate}
+    \item Ensure maintenance pin is inserted.
+    \item Ensure device is unarmed. 
+    \item Ensure rotor springs are undamaged and secure. 
+    \begin{enumerate}
+        \item Stand device up right with the ring pointing upwards. 
+        \item Remove steel cover plate on back of device. 
+        \item Inspect both rotor springs for damage. If damage is suspected do not install device. Report damage and replace springs. 
+        \item Ensure outer spring tail is captured between shelf indent and pin. 
+        \item Ensure inner spring tail is secure in the rotor shaft slot. 
+        \item Reinstall cover plate ensuring pin alignment. 
+        \item Lay device on it's back on a flat unobstructed surface. 
+    \end{enumerate}
+    \item Ensure secondary pawl latch is in the lowered position underneath the secondary pawl. The latch should not restrict the movement of the pawl. 
+    \item Inspect spindle assembly. 
+    \begin{enumerate}
+        \item Inspect assemblies for visible damage or wear. 
+        \item Ensure shafts are perpendicular to shelf face. 
+        \item Inspect gears for misalignment. 
+    \end{enumerate}
+    \item Ensure the cable is wrapped around each drum about three times. 
+    \item Inspect arm cuff for fabric damage. 
+\end{enumerate}
 \section{Mounting on Glovebox}
     \begin{enumerate}
-        \item Ensure that maintencance pin is inserted and plastic covers are attached
+        \item Ensure that maintenance pin is inserted and plastic covers are attached
         \item Slide device over the gloveport
         \item Tighten bolt at the top of the split colar
         \item Insert the heat fuse into the leftmost sensor port beneath the Glove port
@@ -244,7 +300,7 @@ To put the device in maintenance mode insert the pin as seen in the figure below
 % \end{figure}
 
 \section{Manual Operation}
-To manually activate the device, push the lever on the left side of the device, it should immediately actuate. The actuation is the same as when automatically actuated except that the heat fuse has not melted and does not need to be repalced.
+To manually activate the device, push the lever on the left side of the device, it should immediately actuate. Manual activation does not trigger the heat fuse and does not require replacement. 
 
 \section{Automatic Actuation (Fire Event)}
     \begin{enumerate}
@@ -260,6 +316,9 @@ To manually activate the device, push the lever on the left side of the device, 
     \begin{caution}
         Do not reset the mechanism until the fire has been fully extinguished and the glovebox atmosphere is stable.
     \end{caution}
+
+After the device has been activated during a fire event, the mechanism must be inspected and reset before it can be returned to service. \textbf{DO NOT INSPECT UNLESS GLOVEBOX HAS BEEN DEEMED SAFE BY THE APPROPRIATE PERSONNEL} Follow the procedure below to safely reset the device. 
+    
     \begin{enumerate}
         \item 
     \end{enumerate}
